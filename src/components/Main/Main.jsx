@@ -6,7 +6,7 @@ import axios from 'axios';
 // import posts from '../../data/posts';
 
 
-const API_BASE_URI = 'http://localhost:3000/'
+export const API_BASE_URI = 'http://localhost:3000/'
 
 
 export default function Main() {
@@ -18,7 +18,7 @@ export default function Main() {
         axios.get(`${API_BASE_URI}posts`)
             .then(res => {
                 console.log('posts res', res)
-
+                setPublishedPosts(res.data)
             })
             .catch(err => {
                 console.error(err)
