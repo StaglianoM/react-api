@@ -1,13 +1,34 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Form from '../Form/form'; // Import del componente Form
 import PostCard from '../PostCard/PostCard';
 import style from './Main.module.css';
-import posts from '../../data/posts';
+import axios from 'axios';
+// import posts from '../../data/posts';
+
+
+const API_BASE_URI = 'http://localhost:3000/'
+
 
 export default function Main() {
-    const [publishedPosts, setPublishedPosts] = useState(
-        posts.filter((post) => post.published) // Filtro i post pubblicati inizialmente
+    const [publishedPosts, setPublishedPosts] = useState([]
+        // posts.filter((post) => post.published)
     );
+
+    function fetchPosts() {
+        axios.get(`${API_BASE_URI}posts`)
+            .then(res => {
+                console.log('posts res', res)
+
+            })
+            .catch(err => {
+                console.error(err)
+            })
+    }
+
+    useEffect(() => {
+        fetchPosts()
+    }, [])
+
 
     const handleAddPost = (postData) => {
         const newPost = {
