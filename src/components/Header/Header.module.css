@@ -1,0 +1,13 @@
+.header {
+    background-color: rgb(114, 223, 250);
+    color: rgb(32, 32, 32);
+}
+
+.nav_container {
+    padding: 1rem
+}
+
+.menu {
+    display: flex;
+    justify-content: space-around;
+}

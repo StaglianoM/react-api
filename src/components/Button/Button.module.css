@@ -1,0 +1,15 @@
+.button {
+    background-color: rgb(11, 227, 235);
+    color: rgb(7, 7, 7);
+    line-height: 1.5rem;
+    padding: 0 1rem;
+    text-align: center;
+    border-radius: 999px;
+    border-color: #ff1313;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #8ec2fa;
+    transform: scale(1.15);
+}
